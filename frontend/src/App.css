@@ -357,9 +357,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 30px 0 40px 0;
   position: relative;
   background-image: url('./assets/img/banner-bg.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: flex;
+  background-size: contain;
+  background-repeat: repeat;
   justify-content: center; 
   z-index: -2;
 }
@@ -442,8 +441,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-color: white;
   color: black;
   border: 1px solid black;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 15px;
+  border-radius: 25px;
   margin-top: 10px;
   max-width: 750px;
   position: relative;
@@ -689,7 +688,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 15px;
   align-self: flex-end;
   color: #121212;
-  text-align: end;
+  text-align: start;
   display: inline-block;
 }
 
@@ -721,6 +720,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .send-button {
   border-radius: 50% !important;
   background-color: #0C3561 !important;
+  border-color: transparent !important;
   width: 40px;
   height: 40px;
   color: #fff;
@@ -767,9 +767,66 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 
 
+/************ Question Css ************/
+
+.question-log {
+  background-color: #000;
+  border-radius: 10px;
+  color: #fff;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.question-item {
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 14px;
+  transition: transform 0.2s ease-in-out;
+  white-space: nowrap;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.question-item:first-child {
+  background-color: #ff6347;
+  font-weight: bold;
+}
+
+.question-item:hover {
+  transform: translateY(-5px);
+}
+
+
 /************ Footer Css ************/
 .footer {
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   background-color: #000;
   background-position: center center;
   background-size: cover;
@@ -778,6 +835,8 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 
 .footer img {
   width: 26%;
+  margin-top: 40px;
+  margin-bottom: 20px;
 }
 
 .footer p {
@@ -785,5 +844,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   font-size: 14px;
   color: #B8B8B8;
   letter-spacing: 0.5px;
-  margin-top: 20px;
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
