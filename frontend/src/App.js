@@ -9,6 +9,8 @@ import { Projects } from "./components/Projects";
 import { Chatbot } from "./components/Chatbot";
 import ChatbotIcon from "./components/ChatbotIcon";
 import { Footer } from "./components/Footer";
+import { QuestionLog } from "./components/QuestionLog";
+
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -26,7 +28,9 @@ function App() {
       <Projects />
       <Chatbot isOpen={isChatOpen} />
       <ChatbotIcon onClick={handleChatbotIconClick} isChatOpen={isChatOpen} />
+      <QuestionLog />
       <Footer />
+
     </div>
   );
 }
