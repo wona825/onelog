@@ -40,7 +40,7 @@ export const Chatbot = ({ isOpen }) => {
   const scrollToBottom = (smooth = true) => {
     messagesContainerRef.current?.scrollTo({
       top: messagesContainerRef.current.scrollHeight,
-      behavior: smooth ? 'smooth' : 'auto'
+      behavior: 'auto'
     });
   };
 
@@ -77,8 +77,9 @@ export const Chatbot = ({ isOpen }) => {
           }
 
           const chunk = decoder.decode(value);
+          console.log(chunk);
           const cleanChunk = chunk.replace(/data:/g, '').replace(/\n/g, ''); 
-          const cleanText = cleanChunk.replace(/"([^"]*?)"/g, '$1').replace(/\\/g, '').replace(/n/g, '\n');                    
+          const cleanText = cleanChunk.replace(/"([^"]*?)"/g, '$1').replace(/\\/g, '');                    
 
           partialResponse += cleanText;
 
@@ -98,9 +99,11 @@ export const Chatbot = ({ isOpen }) => {
         reader.read().then(processText);
       } else {
         console.error('Response not ok:', response.statusText);
+        setMessages(prevMessages => [...prevMessages, { sender: 'bot', text: '죄송합니다. 서버 오류가 발생하였습니다. 잠시 후에 다시 시도해주세요 🤢' }]);
       }
     } catch (error) {
       console.error('Error while sending message:', error);
+      setMessages(prevMessages => [...prevMessages, { sender: 'bot', text: '죄송합니다. 현재 서버 오류가 발생하였습니다. 잠시 후에 다시 시도해주세요 🤢' }]);
     }
   };
 
