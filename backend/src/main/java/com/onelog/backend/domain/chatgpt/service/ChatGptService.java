@@ -2,8 +2,6 @@ package com.onelog.backend.domain.chatgpt.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.onelog.backend.domain.chatgpt.config.ChatGptConfig;
 import com.onelog.backend.domain.chatgpt.dto.ChatGptRequest;
 import com.onelog.backend.domain.chatgpt.dto.Message;
@@ -23,9 +21,8 @@ import java.util.List;
 @RequiredArgsConstructor
 @Transactional
 public class ChatGptService {
-    private final ObjectMapper objectMapper = new ObjectMapper()
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
-            .setPropertyNamingStrategy(PropertyNamingStrategies.SNAKE_CASE);
+
+    private final ObjectMapper objectMapper;
 
     @Value("${chatgpt.api-key}")
     private String chatGptKey;
@@ -41,9 +38,15 @@ public class ChatGptService {
         List<Message> messages = new ArrayList<>();
 
         messages.add(Message.builder()
+                .role("assistant")
+                .content(ChatGptConfig.PROMPT)
+                .build());
+
+        messages.add(Message.builder()
                 .role(ChatGptConfig.ROLE)
                 .content(message)
                 .build());
+
         ChatGptRequest chatGptRequest = new ChatGptRequest(
                 ChatGptConfig.MODEL,
                 ChatGptConfig.TEMPERATURE,
@@ -51,19 +54,22 @@ public class ChatGptService {
                 messages
         );
 
-        Flux<String> eventStream = client.post()
+        return client.post()
                 .bodyValue(objectMapper.writeValueAsString(chatGptRequest))
                 .accept(MediaType.TEXT_EVENT_STREAM)
                 .retrieve()
                 .bodyToFlux(String.class)
                 .map(response -> {
                     try {
-                        return objectMapper.readTree(response).path("choices").get(0).path("delta").path("content").toString();
+                        return objectMapper.readTree(response)
+                                .path("choices")
+                                .get(0)
+                                .path("delta")
+                                .path("content")
+                                .asText();
                     } catch (JsonProcessingException e) {
                         return "";
                     }
                 });
-
-        return eventStream;
     }
 }
