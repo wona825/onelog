@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.util.List;
 
+/**
+ * chatgpt 요청을 위한 dto
+ */
 @Getter
 @NoArgsConstructor
 public class ChatGptRequest implements Serializable {

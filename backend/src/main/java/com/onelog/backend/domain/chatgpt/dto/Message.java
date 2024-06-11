@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * gpt 요청 dto를 위한 dto
+ */
 @Getter
 @NoArgsConstructor
 public class Message implements Serializable {

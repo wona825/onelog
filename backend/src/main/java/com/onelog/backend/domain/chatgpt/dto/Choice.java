@@ -7,6 +7,9 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * chatgpt 응답 필드를 위한 dto
+ */
 @Getter
 @NoArgsConstructor
 public class Choice implements Serializable {

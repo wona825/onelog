@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+/**
+ * 사용자로부터 질문받은 내역을 기록하기 위한 entity
+ */
 @Entity
 @Getter
 @NoArgsConstructor
