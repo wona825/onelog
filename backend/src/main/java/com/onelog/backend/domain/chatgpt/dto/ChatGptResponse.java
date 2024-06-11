@@ -9,6 +9,9 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * chatgpt 응답을 위한 dto
+ */
 @Getter
 @NoArgsConstructor
 public class ChatGptResponse implements Serializable {
