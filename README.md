@@ -30,9 +30,8 @@
 ![image](https://github.com/wona825/onelog/assets/81519167/b53a6a88-76f0-489e-8c15-c75b6ef5df47)
 
 ### 5. **챗봇 💬**
-- 오른쪽 하단에 위치한 버튼을 통해 접근할 수 있으며, 사용자가 궁금한 점을 물어보면 GPT API를 통해 실시간으로 답변을 제공합니다.
+- 사용자가 궁금한 점을 물어보면 GPT API를 통해 실시간으로 답변을 제공합니다.
 ![image](https://github.com/wona825/onelog/assets/81519167/4aefe8ed-5080-47a6-9907-07f7ad790462)
-![image](https://github.com/wona825/onelog/assets/81519167/505a9257-67ce-4bef-88a0-0849e3a827d6)
 
 ### 6. **Question Log ❓**
 - 다른 접속자들이 챗봇에게 한 질문들을 볼 수 있고, 이를 통해 사용자는 다른 사람들이 궁금해했던 점들을 확인할 수 있습니다.
