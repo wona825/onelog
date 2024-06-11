@@ -1,5 +1,8 @@
 package com.onelog.backend.domain.chatgpt.config;
 
+/**
+ *  chatgpt api 호출 시 사용되는 설정값 정의
+ */
 public class ChatGptConfig {
     public static final String AUTHORIZATION = "Authorization";
     public static final String BEARER = "Bearer ";
