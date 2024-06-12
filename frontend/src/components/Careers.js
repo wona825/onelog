@@ -2,7 +2,9 @@ import React from "react";
 import TrackVisibility from 'react-on-screen';
 import 'animate.css';
 
+// Careers 컴포넌트는 사용자의 경력을 타임라인 형식으로 보여줍니다.
 export const Careers = () => {
+  // 각 경력 항목을 정의하는 객체 배열
   const careerExamples = [
     {
       id: 1,
@@ -95,12 +97,14 @@ export const Careers = () => {
   return (
     <section className="career" id="careers">
       <div className="container">
+        {/* TrackVisibility 컴포넌트를 사용하여 섹션이 화면에 보일 때 애니메이션을 적용 */}
         <TrackVisibility partialVisibility>
           {({ isVisible }) => (
             <div className={`career-content ${isVisible ? "animate__animated animate__fadeIn" : ""}`}>
               <h2>Careers</h2>
               <div className="career-list">
                 <div className="career-timeline">
+                  {/* 각 경력 항목을 타임라인 형식으로 렌더링 */}
                   {careerExamples.map((example, index) => (
                     <TrackVisibility key={example.id} partialVisibility>
                       {({ isVisible }) => (

@@ -12,12 +12,12 @@ import projImg9 from "../assets/img/project-img-9.jpg";
 import projImg10 from "../assets/img/project-img-10.jpg";
 import projImg11 from "../assets/img/project-img-11.jpg";
 import projImg12 from "../assets/img/project-img-12.jpg";
-
-
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
+// Projects 컴포넌트는 다양한 프로젝트를 탭 형식으로 보여줍니다.
 export const Projects = () => {
+  // 웹 프로젝트 목록
   const web = [
     {
       title: "SolarSaver",
@@ -87,6 +87,7 @@ export const Projects = () => {
     }
   ];
   
+  // 모바일 프로젝트 목록
   const mobile = [
     {
       title: "FitTrack",
@@ -158,6 +159,7 @@ export const Projects = () => {
     }
   ];
   
+  // 기타 프로젝트 목록
   const etc = [
     {
       title: "AI Assistant",
@@ -252,6 +254,7 @@ export const Projects = () => {
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
+                        {/* 웹 프로젝트 카드 렌더링 */}
                         {web.map((project, index) => (
                           <ProjectCard
                             key={index}
@@ -262,6 +265,7 @@ export const Projects = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <Row>
+                        {/* 모바일 프로젝트 카드 렌더링 */}
                         {mobile.map((project, index) => (
                           <ProjectCard
                             key={index}
@@ -272,6 +276,7 @@ export const Projects = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="third">
                       <Row>
+                        {/* 기타 프로젝트 카드 렌더링 */}
                         {etc.map((project, index) => (
                           <ProjectCard
                             key={index}

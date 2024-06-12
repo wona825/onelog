@@ -2,7 +2,9 @@ import { useRef, useState, useEffect } from "react";
 import { FaStar, FaRegStar } from "react-icons/fa";
 import 'animate.css';
 
+// Skills 컴포넌트는 사용자의 기술 목록을 카테고리별로 표시합니다.
 export const Skills = () => {
+  // 기술 카테고리와 현재 선택된 카테고리 상태를 관리합니다.
   const [categories, setCategories] = useState([
     { id: 1, name: "Language" },
     { id: 2, name: "IDE & Tools" },
@@ -17,11 +19,13 @@ export const Skills = () => {
   const titleRef = useRef(null);
   const contentRef = useRef(null);
 
+  // 선택된 카테고리가 변경될 때 해당 카테고리에 대한 기술 목록을 설정합니다.
   useEffect(() => {
     const skillsForCategory = getSkillsForCategory(selectedCategory.name);
     setSkills(skillsForCategory);
   }, [selectedCategory]);
 
+  // IntersectionObserver를 사용하여 제목과 내용에 애니메이션을 추가합니다.
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -60,6 +64,7 @@ export const Skills = () => {
     };
   }, []);
 
+  // 카테고리를 클릭할 때 선택된 카테고리를 업데이트합니다.
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
     if (skillListRefs.current) {
@@ -67,6 +72,7 @@ export const Skills = () => {
     }
   };
 
+  // 카테고리에 따른 기술 목록을 반환합니다.
   const getSkillsForCategory = (categoryName) => {
     switch (categoryName) {
       case "Language":
@@ -126,6 +132,7 @@ export const Skills = () => {
     }
   };
 
+  // 기술 수준에 따라 별 아이콘을 렌더링합니다.
   const renderLevelIcons = (level) => {
     const maxLevel = 4;
     let icons = [];
