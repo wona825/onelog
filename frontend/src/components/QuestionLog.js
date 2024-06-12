@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 
+// QuestionLog 컴포넌트는 오늘의 질문 목록을 가져와서 화면에 표시합니다.
 export const QuestionLog = () => {
-  const [questions, setQuestions] = useState([]);
-  const [animationDuration, setAnimationDuration] = useState('15s');
-  const marqueeRef = useRef(null);
+  const [questions, setQuestions] = useState([]); // 질문 목록 상태
+  const [animationDuration, setAnimationDuration] = useState('15s'); // 애니메이션 지속 시간 상태
+  const marqueeRef = useRef(null); // 마키 요소 참조
 
+  // 컴포넌트가 마운트될 때 오늘의 질문을 가져오는 함수
   useEffect(() => {
     const fetchStats = async () => {
       try {
@@ -24,17 +26,19 @@ export const QuestionLog = () => {
     fetchStats();
   }, []);
 
+  // 질문 목록이 업데이트될 때 마키 애니메이션 지속 시간을 설정하는 함수
   useEffect(() => {
     if (marqueeRef.current && questions.length > 0) {
       const totalWidth = marqueeRef.current.scrollWidth;
       const visibleWidth = marqueeRef.current.clientWidth;
-      const duration = (totalWidth + visibleWidth)/150; 
+      const duration = (totalWidth + visibleWidth) / 150; 
       setAnimationDuration(`${duration}s`);
     }
   }, [questions]);
 
+  // 질문이 없을 때는 아무것도 렌더링하지 않음
   if (questions.length === 0) {
-    return null; // 질문이 없을 때는 아무것도 렌더링하지 않음
+    return null;
   }
 
   return (

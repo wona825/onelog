@@ -5,23 +5,27 @@ import headshot from "../assets/img/headshot.jpg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
+// Banner 컴포넌트는 소개 페이지의 상단 배너를 구성합니다.
 export const Banner = () => {
-  const [loopNum, setLoopNum] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [text, setText] = useState('');
-  const [delta, setDelta] = useState(200);
-  const [index, setIndex] = useState(1);
-  const toRotate = ["Hi! I'm Jiwon, \nBackend Developer."];
-  const period = 1000;
+  const [loopNum, setLoopNum] = useState(0); // 반복 횟수
+  const [isDeleting, setIsDeleting] = useState(false); // 글자 삭제 여부
+  const [text, setText] = useState(''); // 현재 출력 중인 텍스트
+  const [delta, setDelta] = useState(200); // 타이핑 속도
+  const [index, setIndex] = useState(1); // 현재 인덱스
+  const toRotate = ["Hi! I'm Jiwon, \nBackend Developer."]; // 회전할 텍스트 목록
+  const period = 1000; // 텍스트가 완성되었을 때 대기 시간
 
+  // 컴포넌트가 마운트되거나 text 상태가 변경될 때마다 실행되는 useEffect 훅
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
     }, delta);
 
+    // 컴포넌트가 언마운트될 때 타이머를 정리합니다.
     return () => { clearInterval(ticker) };
   }, [text]);
 
+  // tick 함수는 타이핑 효과를 구현합니다.
   const tick = () => {
     let i = loopNum % toRotate.length;
     let fullText = toRotate[i];
@@ -30,18 +34,18 @@ export const Banner = () => {
     setText(updatedText);
 
     if (isDeleting) {
-      setDelta(prevDelta => prevDelta / 2);
+      setDelta(prevDelta => prevDelta / 2); // 글자 삭제 중이면 속도를 빠르게 설정
     }
 
     if (!isDeleting && updatedText === fullText) {
       setIsDeleting(true);
       setIndex(prevIndex => prevIndex - 1);
-      setDelta(period);
+      setDelta(period); // 글자가 완성되었을 때 대기 시간 설정
     } else if (isDeleting && updatedText === '') {
       setIsDeleting(false);
       setLoopNum(loopNum + 1);
       setIndex(1);
-      setDelta(500);
+      setDelta(500); // 글자 삭제가 완료되었을 때 대기 시간 설정
     } else {
       setIndex(prevIndex => prevIndex + 1);
     }
