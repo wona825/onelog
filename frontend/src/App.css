@@ -359,7 +359,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   background-image: url('./assets/img/banner-bg.jpg');
   background-size: contain;
   background-repeat: repeat;
-  justify-content: center; 
+  justify-content: center;
   z-index: -2;
 }
 
@@ -376,83 +376,44 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   max-width: 800px;
 }
 
+.career-section {
+  margin-bottom: 50px;
+}
+
+.career-section h3 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
 .career-list {
-  position: relative;
-  padding: 20px 0;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.career-timeline {
-  position: relative;
+.career-item-box {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.timeline-item {
-  display: flex;
-  margin-bottom: 80px;
-  position: relative;
-  align-items: center;
+.career-item {
+  padding: 10px;
 }
 
-.timeline-circle {
-  width: 40px; 
-  height: 40px; 
-  background-color: black;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  margin-right: 20px;
-  z-index: 2 !important; 
-  font-size: 1.2em;
-  transition: transform 0.5s ease-in-out; 
-}
-
-.timeline-item.animate__animated.animate__fadeInUp .timeline-circle {
-  transform: translateY(-10px); 
-}
-
-.timeline-line {
-  position: absolute;
-  width: 5px; 
-  background-color: black;
-  left: 20px;
-  top: 0;
-  bottom: 0;
-  z-index: -1; 
-}
-
-.timeline-content {
-  flex: 1;
-}
-
-.timeline-content h3,
-.timeline-content p,
-.timeline-content ul {
+.career-item p {
+  font-size: 18px;
+  color: #000000;
   margin: 0;
 }
 
-.timeline-content ul li {
-  list-style: none;
-  margin-bottom: 5px;
-}
-
-.speech-bubble {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
-  padding: 15px;
-  border-radius: 25px;
-  margin-top: 10px;
-  max-width: 750px;
-  position: relative;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  font-family: 'Arial', sans-serif;
-  line-height: 1.5; 
-}
-
-.description {
-  white-space: pre-line; 
+.career-item span {
+  font-style: italic;
+  color: #666;
+  margin-left: 10px;
 }
 
 

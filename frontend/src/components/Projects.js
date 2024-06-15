@@ -10,223 +10,135 @@ import projImg7 from "../assets/img/project-img-7.jpg";
 import projImg8 from "../assets/img/project-img-8.jpg";
 import projImg9 from "../assets/img/project-img-9.jpg";
 import projImg10 from "../assets/img/project-img-10.jpg";
-import projImg11 from "../assets/img/project-img-11.jpg";
-import projImg12 from "../assets/img/project-img-12.jpg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 
 // Projects 컴포넌트는 다양한 프로젝트를 탭 형식으로 보여줍니다.
 export const Projects = () => {
-  // 웹 프로젝트 목록
-  const web = [
-    {
-      title: "SolarSaver",
-      description: "A website that makes solar energy accessible",
-      imgUrl: projImg1,
-      introduction: `SolarSaver는 태양광 에너지 솔루션을 제공하는 플랫폼으로, 지속 가능한 에너지 사용을 촉진하고 탄소 발자국을 줄이기 위해 노력합니다. 
-      이 플랫폼은 사용자에게 다양한 태양광 패널 옵션을 제공하며, 전문가와의 상담을 통해 최적의 설치 방법을 안내합니다. 
-      또한, 사용자 리뷰와 평점을 통해 신뢰성을 높였습니다.`,
-      mainFunction: `사용자가 자신의 집에 적합한 태양광 패널을 찾고 설치할 수 있는 온라인 마켓플레이스. 
-      실시간 견적 비교 기능, 설치 후기 공유, 유지보수 예약 시스템을 포함하고 있습니다. 
-      실시간 견적 비교는 WebSocket을 활용하여 실시간으로 업데이트 되며, 리뷰 시스템은 Elasticsearch를 사용하여 빠른 검색과 필터링을 구현했습니다.`,
-      position: "Back-End Developer",
-      usedSkills: "Django, PostgreSQL, Redis, WebSocket, Elasticsearch",
-      link: "https://solarsaver.com",
-      conclusion: `태양광 에너지 사용을 통해 환경 보호에 기여하고, 사용자들이 지속 가능한 에너지 솔루션을 쉽게 접할 수 있도록 도왔습니다. 
-      이 프로젝트를 통해 친환경 에너지 시장의 확대에 기여했습니다. 
-      또한, WebSocket과 Elasticsearch의 도입으로 시스템의 실시간성과 검색 효율성을 높였습니다.`
-    },
-    {
-      title: "GreenThumb",
-      description: "Gardening Tips and Tools",
-      imgUrl: projImg2,
-      introduction: `GreenThumb은 가드닝 애호가들을 위한 종합 정보 제공 플랫폼으로, 사용자들이 식물 재배에 필요한 모든 정보를 쉽게 찾을 수 있도록 돕습니다. 
-      이 웹사이트는 사용자 간의 경험 공유를 장려하며, 전문가의 조언과 함께 다양한 가드닝 도구와 제품을 소개합니다.`,
-      mainFunction: `식물 관리 및 재배에 관한 정보 제공, 사용자 리뷰 시스템, 온라인 상점 기능을 제공합니다. 
-      사용자가 자신의 식물 재배 일기를 작성하고 공유할 수 있는 기능도 포함되어 있습니다. 
-      사용자 리뷰 시스템은 MongoDB를 사용하여 대용량 데이터 처리를 최적화하였고, 일기 작성 기능은 Quill.js를 사용하여 풍부한 텍스트 에디터 환경을 제공했습니다.`,
-      position: "Full Stack Developer",
-      usedSkills: "React, Node.js, MongoDB, Quill.js",
-      link: "https://greenthumb.com",
-      conclusion: `사용자들이 더 나은 가드닝 경험을 할 수 있도록 지원하고, 가드닝 커뮤니티의 성장을 촉진했습니다. 
-      플랫폼의 다양한 기능을 통해 사용자 참여를 높였습니다. 
-      특히, MongoDB와 Quill.js의 활용으로 사용자 경험을 향상시켰습니다.`
-    },
-    {
-      title: "EduTrack",
-      description: "Educational Progress Tracking",
-      imgUrl: projImg3,
-      introduction: `EduTrack은 학생들의 학습 진행 상황을 추적하고, 교사와 학부모가 실시간으로 학업 성취도를 확인할 수 있도록 돕는 교육 플랫폼입니다. 
-      이 플랫폼은 학생들의 성적 데이터를 시각화하여 제공하며, 맞춤형 학습 계획을 세울 수 있는 도구를 제공합니다.`,
-      mainFunction: `학생 성적 관리, 학습 계획 수립, 실시간 성과 피드백 기능을 포함합니다. 
-      학부모와 교사가 학생의 학업 진척도를 모니터링하고 지원할 수 있도록 합니다. 
-      성적 데이터 시각화는 D3.js를 사용하여 구현하였으며, 실시간 피드백 시스템은 WebSocket을 통해 즉각적인 알림을 제공합니다.`,
-      position: "Back-End Developer",
-      usedSkills: "Spring Boot, Java, MySQL, D3.js, WebSocket",
-      link: "https://edutrack.com",
-      conclusion: `학생들의 학습 효과를 극대화하고, 교사와 학부모가 효과적으로 학생들을 지원할 수 있도록 했습니다. 
-      데이터 기반의 학습 관리를 통해 교육의 질을 향상시켰습니다. 
-      특히, D3.js와 WebSocket의 사용으로 실시간 데이터 시각화와 피드백 시스템을 구현하여 사용자 경험을 크게 향상시켰습니다.`
-    },
-    {
-      title: "RecipeMaster",
-      description: "Culinary Recipes and Tips",
-      imgUrl: projImg4,
-      introduction: `RecipeMaster는 요리 애호가들을 위한 레시피 공유 플랫폼으로, 다양한 요리법과 요리 팁을 제공합니다. 
-      사용자는 자신의 요리 레시피를 공유하고, 다른 사용자와 요리 경험을 나눌 수 있습니다. 
-      또한, 전문가의 요리 강좌와 팁을 통해 요리 실력을 향상시킬 수 있습니다.`,
-      mainFunction: `레시피 검색 및 공유, 요리 팁 제공, 사용자 리뷰 시스템을 포함합니다. 
-      맞춤형 요리 추천 기능과 요리 영상 강좌도 제공합니다. 
-      레시피 검색 기능은 Elasticsearch를 활용하여 빠른 검색과 필터링을 지원하고, 영상 강좌는 AWS S3와 CloudFront를 통해 안정적이고 빠르게 제공됩니다.`,
-      position: "Full Stack Developer",
-      usedSkills: "Vue.js, Node.js, PostgreSQL, Elasticsearch, AWS S3, CloudFront",
-      link: "https://recipemaster.com",
-      conclusion: `요리 애호가들이 쉽게 레시피를 찾고 공유할 수 있도록 하여 커뮤니티를 활성화했습니다. 
-      다양한 기능을 통해 사용자 경험을 향상시키고 요리 지식을 확산했습니다. 
-      Elasticsearch와 AWS 서비스를 활용하여 검색 효율성과 콘텐츠 제공 속도를 높였습니다.`
-    }
-  ];
-  
   // 모바일 프로젝트 목록
   const mobile = [
     {
-      title: "FitTrack",
-      description: "Fitness Tracking App",
-      imgUrl: projImg5,
-      introduction: `FitTrack은 사용자의 운동 기록과 건강 관리를 돕는 모바일 애플리케이션입니다. 
-      이 앱은 운동 루틴을 추적하고, 식단 관리 기능을 제공하며, 사용자가 자신의 건강 목표를 달성할 수 있도록 지원합니다. 
-      또한, 사용자 간의 운동 데이터를 비교하고 공유할 수 있는 소셜 기능을 포함하고 있습니다.`,
-      mainFunction: `운동 루틴 추적, 식단 관리, 건강 목표 설정 및 추적, 소셜 피드 기능을 제공합니다. 
-      사용자 맞춤형 운동 계획을 수립하고, 건강 지표를 시각화하여 제공합니다. 
-      데이터베이스는 MariaDB를 사용하여 운동 및 식단 데이터를 효율적으로 저장하고, Spring Security를 사용하여 사용자 데이터를 보호했습니다.`,
-      position: "Back-End Developer",
-      usedSkills: "Spring Boot, Java, MariaDB, Spring Security",
-      link: "https://fittrack.com",
-      conclusion: `사용자가 건강한 생활 습관을 유지할 수 있도록 도와주었습니다. 
-      이 앱을 통해 사용자들이 더욱 체계적으로 건강을 관리할 수 있었습니다. 
-      특히, MariaDB와 Spring Security의 사용으로 데이터 관리와 보안성을 높였습니다.`
-    },
-    {
-      title: "TravelMate",
-      description: "Travel Planning App",
+      title: "쉼표",
+      description: "도심 속 쉼터 추천 서비스",
       imgUrl: projImg6,
-      introduction: `TravelMate는 사용자의 여행 계획을 돕는 모바일 애플리케이션입니다. 
-      이 앱은 여행 일정을 관리하고, 여행지 정보를 제공하며, 사용자 리뷰를 통해 신뢰성 있는 여행 정보를 제공합니다. 
-      또한, 사용자 간의 경험 공유를 통해 더 나은 여행 계획을 수립할 수 있도록 합니다.`,
-      mainFunction: `여행 일정 관리, 여행지 정보 제공, 사용자 리뷰 시스템, 경험 공유 기능을 포함합니다. 
-      맞춤형 여행 추천 기능과 오프라인 지도 기능도 제공합니다. 
-      MongoDB를 사용하여 사용자 리뷰와 여행 일정을 저장하며, 오프라인 지도 기능은 Mapbox를 사용하여 구현했습니다.`,
+      introduction: `쉼표는 공공데이터를 활용한 도심 속 쉼터 추천 서비스입니다.`,
+      mainFunction: `1. 거리/리뷰 기반 오늘의 쉼터 추천
+                     2. 다양한 쉼터 상세 조회 
+                     3. 쉼터 즐겨찾기 및 리뷰 작성`,
       position: "Back-End Developer",
-      usedSkills: "Node.js, Express, MongoDB, Mapbox",
-      link: "https://travelmate.com",
-      conclusion: `사용자들이 더 나은 여행 경험을 할 수 있도록 지원하고, 여행 계획의 편의성을 높였습니다. 
-      다양한 기능을 통해 사용자 만족도를 높였습니다. 
-      특히, MongoDB와 Mapbox의 활용으로 데이터 저장과 지도 기능을 효율적으로 제공했습니다.`
+      usedSkills: "Spring Boot, Java, MySQL, AWS, Flutter, Dart",
+      link: "https://github.com/wminsoo1/commas"
     },
     {
-      title: "HealthHub",
-      description: "Personal Health Management",
+      title: "어슬렁",
+      description: "산책 기록 저장소",
       imgUrl: projImg7,
-      introduction: `HealthHub는 개인의 건강 관리를 위한 종합 솔루션을 제공하는 모바일 애플리케이션입니다. 
-      이 앱은 사용자에게 맞춤형 건강 관리 계획을 제공하며, 건강 상태를 실시간으로 모니터링하고 피드백을 제공합니다. 
-      또한, 건강 관련 정보를 쉽게 접근할 수 있도록 돕습니다.`,
-      mainFunction: `건강 상태 모니터링, 맞춤형 건강 관리 계획 수립, 실시간 피드백 기능을 포함합니다. 
-      건강 관련 기사와 정보를 제공하고, 전문가 상담 기능도 지원합니다. 
-      Firebase를 사용하여 실시간 데이터베이스를 구현하였으며, Flutter로 크로스플랫폼 지원을 통해 다양한 디바이스에서 원활한 사용 경험을 제공합니다.`,
-      position: "Full Stack Developer",
-      usedSkills: "Flutter, Firebase, Node.js",
-      link: "https://healthhub.com",
-      conclusion: `사용자가 자신의 건강을 효과적으로 관리할 수 있도록 지원했습니다. 
-      실시간 데이터베이스와 크로스플랫폼 지원을 통해 사용자 경험을 크게 향상시켰습니다. 
-      Firebase와 Flutter의 활용으로 실시간 데이터 처리와 다양한 디바이스 지원을 최적화했습니다.`
+      introduction: `어슬렁은 산책 순간을 보다 생생하고 정확하게 남길 수 있는 산책 기록 저장소입니다.`,
+      mainFunction: `1. 산책하는 동안 실시간으로 산책 경로, 시간, 날짜, 거리 기록 가능
+                     2. 산책 기록 저장소에서 지난 산책 기록에 관한 상세 정보 조회 
+                     3. 친구들과의 산책 기록 공유 가능`,
+      position: "Backend Developer",
+      usedSkills: "Android, Kotlin, SpringBoot, Java, MariaDB, AWS",
+      link: "https://github.com/wona825/madcamp_week2"
     },
     {
-      title: "BudgetBuddy",
-      description: "Personal Finance Management",
+      title: "bridge",
+      description: "크리에이터와 팬 사이의 1:1 통화 연결 서비스",
       imgUrl: projImg8,
-      introduction: `BudgetBuddy는 사용자의 재정 관리를 돕는 모바일 애플리케이션입니다. 
-      이 앱은 사용자가 자신의 지출과 수입을 추적하고, 예산을 설정하며, 재정 목표를 달성할 수 있도록 돕습니다.
-       또한, 금융 전문가의 조언을 통해 더 나은 재정 관리를 할 수 있도록 지원합니다.`,
-      mainFunction: `지출 및 수입 추적, 예산 설정, 재정 목표 관리, 금융 전문가 조언 기능을 포함합니다. 
-      맞춤형 재정 보고서 생성 기능과 투자 포트폴리오 관리 기능도 제공합니다. 
-      AWS DynamoDB를 사용하여 데이터를 효율적으로 저장하고, Lambda 함수를 이용하여 백엔드 로직을 서버리스로 구현했습니다.`,
+      introduction: `bridge는 크리에이터와 팬 사이의 1:1 통화 연결 서비스입니다.`,
+      mainFunction: `1. 크리에이터 조회 및 팔로우 기능
+                     2. 팔로우 및 팔로잉 확인 
+                     3. 통화 가능 상태, 통화권 가격, 통화 규칙 지정 기능
+                     4. 통화권 구매 및 통화 연결`,
       position: "Back-End Developer",
-      usedSkills: "AWS DynamoDB, AWS Lambda, Python",
-      link: "https://budgetbuddy.com",
-      conclusion: `사용자가 재정을 체계적으로 관리할 수 있도록 지원하고, 재정 목표를 달성하는 데 도움을 주었습니다. 
-      서버리스 아키텍처를 도입하여 백엔드 관리의 효율성을 높였습니다. 
-      특히, AWS DynamoDB와 Lambda의 사용으로 데이터 처리 속도와 유연성을 향상시켰습니다.`
+      usedSkills: "Spring Boot, Java, PostgreSQL, AWS, Flutter, Dart",
+      link: "https://github.com/ApptiveDev/apptive-19th-bridge-backend"
+    },
+    {
+      title: "Easywine",
+      description: "와인 입문자를 위한 와인 구매 도움 서비스",
+      imgUrl: projImg4,
+      introduction: `Easywine은 와인 입문자의 와인 구매 도움 서비스입니다.`,
+      mainFunction: `1. 맛, 상황, 기타 카테고리 별 설문조사를 통해 오늘의 와인 추천
+                     2. 추천받은 와인 목록을 확인할 수 있는 와인 창고 기능 
+                     3. 와인 상세 정보 조회 및 즐겨찾기 기능`,
+      position: "Android Developer",
+      usedSkills: "Android, Jetpack compose, Kotlin, Spring Boot, MariaDB, AWS",
+      link: "https://github.com/ApptiveDev/EasyWine"
+    },
+    {
+      title: "photour",
+      description: "사진여행을 통한 국적없는 어울림 서비스",
+      imgUrl: projImg5,
+      introduction: `photour는 사진여행을 통한 국적없는 어울림 서비스입니다.`,
+      mainFunction: `1. 여행지에 관한 오디오 가이드 및 포즈추천 가이드
+                     2. 공공데이터를 활용한 여행지 상세 정보
+                     3. 여행 소모임 모집 및 참가 기능`,
+      position: "Android Developer",
+      usedSkills: "Android, Jetpack compose, Kotlin, Spring Boot, Java, MariaDB, AWS"
     }
   ];
+
+
+  // 웹 프로젝트 목록
+  const web = [
+    {
+      title: "yay",
+      description: "예의 있는 메일 작성 및 전송 서비스",
+      imgUrl: projImg1,
+      introduction: `yay는 예의 있는 메일 작성 및 전송이 가능한 메일 작성 도우미 서비스입니다.`,
+      mainFunction: `1. 기본 메일 양식, 언어, 이모지, 어투로 구성된 간단한 옵션 체크 및 입력을 통한 쉬운 메일 작성
+                     2. 작성된 메일 초안을 쉽게 수정 가능 
+                     3. 수신자 이메일 입력 만으로 편리한 메일 전송
+                     4. 반응형 웹 구성을 통해 모바일, 테블릿, PC에서 편리하게 이용 가능`,
+      position: "Backend Developer",
+      usedSkills: "Spring Boot, Java, AWS, MariaDB, Flutter, Dart",
+      link: "https://github.com/wona825/yay"
+    },
+    {
+      title: "ONELOG",
+      description: "개발자 포트폴리오 웹사이트",
+      imgUrl: projImg2,
+      introduction: `ONELOG는 개발자 포트폴리오 웹사이트입니다. 
+                     현재는 제 포트폴리오만 존재하며, 추후 모든 개발자가 사용 가능하게끔 확장 예정입니다.`,
+      mainFunction: `1. 자기소개 및 연락처, 기술 스택, 경력 사항, 프로젝트 등 개발자의 정보를 시각적으로 제시
+                     2. 챗봇과의 대화를 통해 해당 개발자에 관하여 원하는 정보에 쉽게 접근 가능
+                     3. Question Log 기능을 통해 다른 방문자들이 남긴 질문 확인 가능.`,
+      position: "Full Stack Developer",
+      usedSkills: "React, Spring Boot, Java, AWS, OpenAI, MariaDB",
+      link: "https://github.com/wona825/onelog"
+    },
+    {
+      title: "스케줄, 알빠임?!",
+      description: "스케줄 근무제 자동화 서비스",
+      imgUrl: projImg3,
+      introduction: `스케줄, 알빠임?!은 스케줄 근무제를 시행하는 매장의 매니저를 위한, 스케줄링 자동화 서비스입니다.`,
+      mainFunction: `1. 자동 스케줄링, 실시간 신청 현황 확인 가능
+                     2. 스케줄링 알고리즘을 통한 스케줄 추천 및 확정 기능 제공 
+                     3. 알바생을 위한 달력 UI 기반 스케줄 확인 `,
+      position: "Backend Developer",
+      usedSkills: "React, Spring Boot, Java, MariaDB",
+      link: "https://github.com/Step3-kakao-tech-campus/Team1_BE"
+    }
+  ];
+
+  
   
   // 기타 프로젝트 목록
   const etc = [
     {
-      title: "AI Assistant",
-      description: "Virtual Assistant using AI",
+      title: "CharE",
+      description: "인공지능을 활용한 의료 초음파 영상 개발",
       imgUrl: projImg9,
-      introduction: `AI Assistant는 인공지능을 활용한 가상 비서 서비스로, 사용자의 일정 관리, 정보 검색, 개인 맞춤형 알림 제공 등 다양한 기능을 제공합니다. 
-      자연어 처리를 통해 사용자의 명령을 이해하고 실행하며, 일상 업무를 더욱 효율적으로 수행할 수 있도록 돕습니다.`,
-      mainFunction: `일정 관리, 정보 검색, 개인 맞춤형 알림 기능을 포함합니다. 
-      자연어 처리(NLP) 알고리즘을 사용하여 사용자의 음성 명령을 분석하고, 기계 학습 모델을 통해 사용자에게 최적의 결과를 제공합니다. 
-      데이터 처리와 분석은 TensorFlow와 Python을 사용하여 구현하였으며, 사용자 데이터의 보호를 위해 강화된 보안 프로토콜을 적용했습니다.`,
+      introduction: `본 연구에서는 초음파 데이터만을 활용하여 스캔 궤적을 예측하는 딥 러닝 프레임워크를 제안합니다.
+                     이를 통해 외부 추적 장치의 의존성을 줄이고, 3D로 복원된 초음파 볼륨을 제공할 수 있습니다.
+                     Verasonics Ventage 64LE 기기와 전자기 센서를 통해 획득한 2D 초음파 데이터, 위치 데이터를 각각 입력, 정답 데이터로 사용하였습니다.`,
+      mainFunction: `1. 모델은 인코더(ResNet의 Residual Block을 사용해 디자인), 어텐션(채널 어텐션과 공간 어텐션을 직렬로 적용하여 피처맵을 가공), 디코더(피처맵을 입력으로 받아 스캔 모션인 6차원 벡터 출력)로 구성되어 있습니다.
+                     2. 2D 초음파 데이터를 위치 데이터에 따라 3차원 공간으로 보내어 볼륨을 습득하였고, 3D 초음파 영상으로 복원하였습니다.
+                     3. 딥러닝 프레임워크를 통해 2D 초음파 데이터에서 스캔 모션을 추정하였고, 추정된 모션을 바탕으로 스캔 궤적을 복원하였습니다. 구현한 딥러닝 모델은 어느 정도 이상의 궤적 예측 성능을 보였습니다. 
+ `,
       position: "AI Developer",
-      usedSkills: "Python, TensorFlow, NLP",
-      link: "https://aiassistant.com",
-      conclusion: `효율적인 일정 관리와 신속한 정보 접근을 가능하게 하여 사용자의 만족도를 높였습니다. 
-      사용자 경험을 개선하고, 일상 업무의 효율성을 크게 향상시켰습니다. 
-      특히, NLP 알고리즘과 강화된 보안 프로토콜을 통해 데이터 처리와 보안성을 강화했습니다.`
-    },
-    {
-      title: "SmartHome",
-      description: "IoT Based Home Automation",
-      imgUrl: projImg10,
-      introduction: `SmartHome은 IoT 기술을 활용한 스마트 홈 자동화 솔루션입니다. 
-      이 프로젝트는 사용자가 집안의 모든 기기를 스마트폰을 통해 제어할 수 있도록 하며, 에너지 효율성을 높이고, 생활의 편리함을 제공합니다. 
-      사용자는 조명, 난방, 보안 시스템 등 다양한 기기를 원격으로 제어하고 모니터링할 수 있습니다.`,
-      mainFunction: `조명, 난방, 보안 시스템 등의 원격 제어 및 모니터링, 에너지 사용 최적화 기능을 포함합니다. 
-      사용자 맞춤형 자동화 시나리오를 제공합니다. 
-      MQTT 프로토콜을 사용하여 IoT 기기 간의 통신을 구현하였으며, Node.js와 Raspberry Pi를 사용하여 서버와 클라이언트 간의 실시간 데이터 전송을 최적화했습니다.`,
-      position: "IoT Developer",
-      usedSkills: "Node.js, MQTT, Raspberry Pi",
-      link: "https://smarthome.com",
-      conclusion: `사용자가 더 편리하고 효율적인 생활을 할 수 있도록 돕고, 에너지 절약을 통해 환경 보호에 기여했습니다. 
-      다양한 IoT 기기와의 연동을 통해 사용자 경험을 향상시켰습니다. 
-      특히, MQTT와 Raspberry Pi의 사용으로 실시간 데이터 전송과 기기 간의 통신을 최적화했습니다.`
-    },
-    {
-      title: "E-Learning Platform",
-      description: "Comprehensive Online Education Platform",
-      imgUrl: projImg11,
-      introduction: `E-Learning Platform은 학생들이 온라인으로 다양한 과정을 학습할 수 있는 종합 교육 플랫폼입니다. 
-      이 플랫폼은 다양한 과목의 강의를 제공하며, 학생들이 자기 주도적으로 학습할 수 있는 환경을 제공합니다. 
-      또한, 학습 진도를 추적하고, 성과를 평가할 수 있는 도구를 포함하고 있습니다.`,
-      mainFunction: `강의 제공, 학습 진도 추적, 성과 평가, 학생 간의 토론 기능을 포함합니다. 
-      맞춤형 학습 경로와 피드백을 제공합니다. 
-      실시간 데이터 처리와 사용자 맞춤형 학습 추천을 위해 AI 알고리즘을 도입하였으며, 데이터베이스는 PostgreSQL을 사용하여 학습 데이터를 관리했습니다.`,
-      position: "Full Stack Developer",
-      usedSkills: "React, Node.js, PostgreSQL, AI algorithms",
-      link: "https://elearning.com",
-      conclusion: `학생들이 언제 어디서나 학습할 수 있도록 지원하고, 학습의 질을 높였습니다. 
-      다양한 기능을 통해 학습 경험을 개선하고, 학생들의 학업 성취도를 향상시켰습니다. 
-      특히, AI 알고리즘을 통한 맞춤형 학습 추천으로 사용자 경험을 크게 향상시켰습니다.`
-    },
-    {
-      title: "WeatherWizard",
-      description: "Advanced Weather Forecasting",
-      imgUrl: projImg12,
-      introduction: `WeatherWizard는 사용자가 실시간으로 날씨 정보를 확인하고 예측할 수 있는 고급 기상 예보 서비스입니다. 
-      이 서비스는 최신 기상 데이터를 수집하여 정확한 예보를 제공하며, 사용자에게 기상 경고와 날씨 관련 팁을 제공합니다. 
-      또한, 사용자 맞춤형 날씨 정보를 통해 더 나은 일상 계획을 세울 수 있습니다.`,
-      mainFunction: `실시간 날씨 정보 제공, 기상 경고, 맞춤형 날씨 예보 기능을 포함합니다. 
-      사용자 위치 기반의 기상 데이터 제공 및 시각화를 지원합니다. 
-      기상 데이터 수집 및 처리에는 Python과 Pandas를 사용하였으며, 시각화에는 D3.js를 활용하여 사용자 친화적인 인터페이스를 구현했습니다.`,
-      position: "Full Stack Developer",
-      usedSkills: "Angular, Node.js, PostgreSQL, D3.js, Python",
-      link: "https://weatherwizard.com",
-      conclusion: `사용자가 일상 생활에서 날씨에 대한 정보를 쉽게 얻고, 더 나은 계획을 세울 수 있도록 도왔습니다. 
-      정확한 기상 데이터를 제공하여 사용자 신뢰도를 높였습니다. 
-      특히, D3.js와 Python을 통한 데이터 시각화와 처리로 사용자 경험을 향상시켰습니다.`
+      usedSkills: "Python, PyTorch",
     }
   ];
 
@@ -234,7 +146,7 @@ export const Projects = () => {
     <section className="project" id="projects">
       <Container>
         <Row>
-          <Col size={12}>
+          <div className="col-12">
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
@@ -242,10 +154,10 @@ export const Projects = () => {
                 <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                     <Nav.Item>
-                      <Nav.Link eventKey="first">Web</Nav.Link>
+                      <Nav.Link eventKey="first">Mobile</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                      <Nav.Link eventKey="second">Mobile</Nav.Link>
+                      <Nav.Link eventKey="second">Web</Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                       <Nav.Link eventKey="third">etc.</Nav.Link>
@@ -254,8 +166,8 @@ export const Projects = () => {
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
-                        {/* 웹 프로젝트 카드 렌더링 */}
-                        {web.map((project, index) => (
+                        {/* 모바일 프로젝트 카드 렌더링 */}
+                        {mobile.map((project, index) => (
                           <ProjectCard
                             key={index}
                             {...project}
@@ -265,8 +177,8 @@ export const Projects = () => {
                     </Tab.Pane>
                     <Tab.Pane eventKey="second">
                       <Row>
-                        {/* 모바일 프로젝트 카드 렌더링 */}
-                        {mobile.map((project, index) => (
+                        {/* 웹 프로젝트 카드 렌더링 */}
+                        {web.map((project, index) => (
                           <ProjectCard
                             key={index}
                             {...project}
@@ -289,7 +201,7 @@ export const Projects = () => {
                 </Tab.Container>
               </div>}
             </TrackVisibility>
-          </Col>
+          </div>
         </Row>
       </Container>
     </section>
