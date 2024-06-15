@@ -11,7 +11,7 @@ export const ProjectCard = ({ title, description, imgUrl, introduction, mainFunc
   return (
     <>
       {/* 프로젝트 카드 */}
-      <Col size={12} sm={6} md={4} onClick={handleShow}>
+      <Col size={12} sm={6} md={6} lg={4} onClick={handleShow} style={{ cursor: 'pointer' }}>
         <div className="proj-imgbx">
           <img className="proj-img" src={imgUrl} alt={title} />
           <div className="proj-txtx">
@@ -28,23 +28,20 @@ export const ProjectCard = ({ title, description, imgUrl, introduction, mainFunc
         </Modal.Header>
         <Modal.Body>
           <h5>💬 Introduction</h5>
-          <p>{introduction}</p>
+          <p style={{ whiteSpace: 'pre-line' }}>{introduction}</p>
           <h5>💥 Main Function</h5>
-          <p>{mainFunction}</p>
+          <p style={{ whiteSpace: 'pre-line' }}>{mainFunction}</p>
           <h5>📎 Position</h5>
           <p>{position}</p>
           <h5>⚒️ Used Skills</h5>
           <p>{usedSkills}</p>
           <h5>🔗 Link</h5>
-          <p><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
-          <h5>⭐ Conclusion</h5>
-          <p>{conclusion}</p>
+          {link ? (
+            <p><a href={link} target="_blank" rel="noopener noreferrer">{link}</a></p>
+          ) : (
+            <p>(Not Uploaded Yet ..( ༎ຶŎ༎ຶ )) </p>
+          )}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

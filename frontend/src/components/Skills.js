@@ -9,7 +9,8 @@ export const Skills = () => {
     { id: 1, name: "Language" },
     { id: 2, name: "IDE & Tools" },
     { id: 3, name: "Framework" },
-    { id: 4, name: "DBMS" }
+    { id: 4, name: "DBMS" },
+    { id: 5, name: "Cloud" } 
   ]);
 
   const [selectedCategory, setSelectedCategory] = useState(categories.find(cat => cat.name === "Language"));
@@ -77,60 +78,48 @@ export const Skills = () => {
     switch (categoryName) {
       case "Language":
         return [
-          { id: 1, name: "JavaScript", color: "yellow", logo: "javascript", logoColor: "black", level: "Expert" },
-          { id: 2, name: "Python", color: "blue", logo: "python", logoColor: "white", level: "Advanced" },
-          { id: 3, name: "Java", color: "red", logo: "java", logoColor: "white", level: "Intermediate" },
-          { id: 4, name: "C++", color: "purple", logo: "cplusplus", logoColor: "white", level: "Intermediate" },
-          { id: 5, name: "C#", color: "blue", logo: "csharp", logoColor: "white", level: "Advanced" },
-          { id: 6, name: "Swift", color: "orange", logo: "swift", logoColor: "white", level: "Beginner" },
-          { id: 7, name: "Kotlin", color: "purple", logo: "kotlin", logoColor: "white", level: "Beginner" },
-          { id: 8, name: "Ruby", color: "red", logo: "ruby", logoColor: "white", level: "Intermediate" },
-          { id: 9, name: "PHP", color: "blue", logo: "php", logoColor: "white", level: "Beginner" },
-          { id: 10, name: "Go", color: "blue", logo: "go", logoColor: "white", level: "Advanced" }
+          { id: 1, name: "Java", color: "red", logo: "java", logoColor: "white", level: "Advanced" },
+          { id: 2, name: "Python", color: "blue", logo: "python", logoColor: "white", level: "Expert" },
+          { id: 3, name: "Kotlin", color: "purple", logo: "kotlin", logoColor: "white", level: "Advanced" },
+          { id: 4, name: "JavaScript", color: "yellow", logo: "javascript", logoColor: "black", level: "Intermediate" },
+          { id: 5, name: "HTML", color: "orange", logo: "html5", logoColor: "white", level: "Intermediate" },
+          { id: 6, name: "CSS", color: "blue", logo: "css3", logoColor: "white", level: "Intermediate" }
         ];
       case "IDE & Tools":
         return [
-          { id: 1, name: "VS Code", color: "blue", logo: "visualstudiocode", logoColor: "white", level: "Expert" },
-          { id: 2, name: "Sublime Text", color: "orange", logo: "sublimetext", logoColor: "white", level: "Advanced" },
-          { id: 3, name: "IntelliJ IDEA", color: "red", logo: "intellijidea", logoColor: "white", level: "Intermediate" },
-          { id: 4, name: "Eclipse", color: "blue", logo: "eclipseide", logoColor: "white", level: "Beginner" },
-          { id: 5, name: "PyCharm", color: "purple", logo: "pycharm", logoColor: "white", level: "Advanced" },
-          { id: 6, name: "Xcode", color: "blue", logo: "xcode", logoColor: "white", level: "Intermediate" },
-          { id: 7, name: "NetBeans", color: "red", logo: "netbeanside", logoColor: "white", level: "Beginner" },
-          { id: 8, name: "Atom", color: "green", logo: "atom", logoColor: "white", level: "Beginner" },
-          { id: 9, name: "Vim", color: "green", logo: "vim", logoColor: "white", level: "Intermediate" },
-          { id: 10, name: "Emacs", color: "purple", logo: "emacs", logoColor: "white", level: "Beginner" }
+          { id: 1, name: "Git", color: "red", logo: "git", logoColor: "white", level: "Advanced" },
+          { id: 2, name: "GitHub", color: "black", logo: "github", logoColor: "white", level: "Expert" },
+          { id: 3, name: "Postman", color: "orange", logo: "postman", logoColor: "white", level: "Expert" },
+          { id: 4, name: "IntelliJ IDEA", color: "blue", logo: "intellijidea", logoColor: "white", level: "Expert" },
+          { id: 5, name: "Visual Studio", color: "blue", logo: "visualstudio", logoColor: "white", level: "Advanced" },
+          { id: 6, name: "PyCharm", color: "green", logo: "pycharm", logoColor: "white", level:  "Advanced" },
+          { id: 7, name: "Notion", color: "black", logo: "notion", logoColor: "white", level: "Expert" },
+          { id: 8, name: "Figma", color: "purple", logo: "figma", logoColor: "white", level: "Intermediate" },
+          { id: 9, name: "Slack", color: "purple", logo: "slack", logoColor: "white", level: "Intermediate" }
         ];
       case "Framework":
         return [
-          { id: 1, name: "React", color: "blue", logo: "react", logoColor: "white", level: "Expert" },
-          { id: 2, name: "Angular", color: "red", logo: "angular", logoColor: "white", level: "Advanced" },
-          { id: 3, name: "Vue.js", color: "green", logo: "vue-dot-js", logoColor: "white", level: "Intermediate" },
-          { id: 4, name: "Spring", color: "green", logo: "spring", logoColor: "white", level: "Advanced" },
-          { id: 5, name: "Django", color: "green", logo: "django", logoColor: "white", level: "Advanced" },
-          { id: 6, name: "Ruby on Rails", color: "red", logo: "rubyonrails", logoColor: "white", level: "Intermediate" },
-          { id: 7, name: "Express.js", color: "green", logo: "express", logoColor: "white", level: "Intermediate" },
-          { id: 8, name: "Flask", color: "green", logo: "flask", logoColor: "white", level: "Beginner" },
-          { id: 9, name: "Laravel", color: "red", logo: "laravel", logoColor: "white", level: "Beginner" },
-          { id: 10, name: "ASP.NET", color: "blue", logo: "aspdotnet", logoColor: "white", level: "Advanced" }
+          { id: 1, name: "Spring", color: "green", logo: "spring", logoColor: "white", level: "Advanced" },
+          { id: 2, name: "Spring Boot", color: "green", logo: "springboot", logoColor: "white", level: "Expert" },
+          { id: 3, name: "React", color: "blue", logo: "react", logoColor: "white", level: "Intermediate" },
+          { id: 4, name: "Jetpack Compose", color: "blue", logo: "jetpackcompose", logoColor: "white", level: "Advanced" }
         ];
       case "DBMS":
         return [
-          { id: 1, name: "MySQL", color: "blue", logo: "mysql", logoColor: "white", level: "Expert" },
-          { id: 2, name: "MongoDB", color: "green", logo: "mongodb", logoColor: "white", level: "Advanced" },
-          { id: 3, name: "PostgreSQL", color: "blue", logo: "postgresql", logoColor: "white", level: "Intermediate" },
-          { id: 4, name: "SQLite", color: "blue", logo: "sqlite", logoColor: "white", level: "Beginner" },
-          { id: 5, name: "Microsoft SQL Server", color: "green", logo: "microsoftsqlserver", logoColor: "white", level: "Advanced" },
-          { id: 6, name: "Oracle Database", color: "red", logo: "oracledatabase", logoColor: "white", level: "Advanced" },
-          { id: 7, name: "Firebase", color: "yellow", logo: "firebase", logoColor: "white", level: "Beginner" },
-          { id: 8, name: "Cassandra", color: "green", logo: "apachecassandra", logoColor: "white", level: "Intermediate" },
-          { id: 9, name: "Redis", color: "red", logo: "redis", logoColor: "white", level: "Intermediate" },
-          { id: 10, name: "DynamoDB", color: "green", logo: "amazondynamodb", logoColor: "white", level: "Beginner" }
+          { id: 1, name: "MariaDB", color: "blue", logo: "mariadb", logoColor: "white", level: "Advanced" },
+          { id: 2, name: "MySQL", color: "blue", logo: "mysql", logoColor: "white", level: "Advanced" },
+          { id: 3, name: "PostgreSQL", color: "blue", logo: "postgresql", logoColor: "white", level: "Intermediate" }
+        ];
+      case "Cloud":
+        return [
+          { id: 1, name: "AWS EC2", color: "orange", logo: "aws", logoColor: "white", level: "Advanced" },
+          { id: 2, name: "AWS RDS", color: "orange", logo: "aws", logoColor: "white", level: "Advanced" },
+          { id: 3, name: "AWS S3", color: "orange", logo: "aws", logoColor: "white", level: "Advanced" }
         ];
       default:
         return [];
     }
-  };
+};
 
   // 기술 수준에 따라 별 아이콘을 렌더링합니다.
   const renderLevelIcons = (level) => {
